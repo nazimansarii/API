@@ -56,6 +56,8 @@ a {
 
 .countries-content img {
   width: 100%;
+  box-shadow: 0 0 8px 0 #ccc;
+
 }
 
 .countries-text {

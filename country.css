@@ -18,6 +18,7 @@
 .country-details img {
   width: 40%;
   border-radius: 5px;
+  box-shadow: 0 0 8px 0 #ccc;
 }
 
 .details-text-container {
