@@ -3,8 +3,19 @@
 }
 
 body {
+  --background-color: white;
+  --text-color: black;
+  --element-color: white;
   margin: 0;
   font-family: "Nunito", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body.dark{
+  --background-color: hsl(207, 26%, 17%);
+  --text-color: white;
+  --element-color: hsl(209, 23%, 22%);
 }
 main {
   margin-block: 24px;
@@ -12,12 +23,11 @@ main {
 a {
   text-decoration-line: none;
   color: inherit;
-
 }
 
 .header-container {
   padding-inline: 24px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--element-color);
 }
 
 .header-content {
@@ -26,6 +36,14 @@ a {
   justify-content: space-between;
   max-width: 1280px;
   margin-inline: auto;
+}
+
+.drk {
+  background-color: inherit;
+  outline: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .countries-container {
@@ -37,6 +55,53 @@ a {
   justify-content: space-around;
 }
 
+.search-fillter-container {
+  max-width: 1280px;
+  margin-inline: auto;
+  display: flex;
+  gap: 16px;
+  padding-inline: 24px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.search {
+  box-shadow: 0 0 4px 0 #ccc;
+  border-radius: 2px;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  width: 300px;
+}
+
+.search input {
+  width: 100%;
+  background-color: inherit;
+  color: inherit;
+}
+.search-fillter-container select {
+  box-shadow: 0 0 4px 0 #ccc;
+  border-radius: 2px;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: inherit;
+  color: inherit;
+}
+
+.search i {
+  color: #ddd;
+  margin-right: 12px;
+  font-size: 13px;
+}
+.search input,
+select {
+  border: none;
+  outline: none;
+}
+
 .countries-content {
   display: inline-block;
   width: 250px;
@@ -46,18 +111,18 @@ a {
   padding-bottom: 20px;
   margin-top: 50px;
   transition: all 0.2s;
+  background-color: var(--element-color);
+
 }
 
-.countries-content:hover{
-    transform: scale(1.03);
+.countries-content:hover {
+  transform: scale(1.03);
   box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.1);
-
 }
 
 .countries-content img {
   width: 100%;
   box-shadow: 0 0 8px 0 #ccc;
-
 }
 
 .countries-text {
@@ -73,11 +138,9 @@ a {
   margin-inline: 16px;
 }
 
-
-@media (max-width:768px) {
-  
-  .main-title, .drk{
+@media (max-width: 768px) {
+  .main-title,
+  .drk {
     font-size: 15px;
   }
- 
 }

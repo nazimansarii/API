@@ -71,11 +71,9 @@ const linkTag = document.querySelector('.link-tag')
 linkTag.addEventListener('click', () => {
     history.back()
 })
-
-const drk = document.querySelector('.drk')
+const drk =document.querySelector('.drk')
 drk.addEventListener('click', () => {
-    
 
-
-
+  const body = document.querySelector('body')
+  body.classList.toggle('dark')
 })

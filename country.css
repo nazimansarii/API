@@ -1,12 +1,15 @@
 
-
-.light{
-    background-color: #fff;
-
+body{
+  --background-color: white;
+  --text-color: black;
+  --element-color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
-
-.dark{
-    background-color: #111;
+body.dark{
+  --background-color: hsl(207, 26%, 17%);
+  --text-color: white;
+  --element-color: hsl(209, 23%, 22%);
 }
 
 .link-tag {
@@ -18,7 +21,11 @@
   cursor: pointer;
   border: none;
   outline: none;
+  background-color: transparent;
+  color: inherit;
 }
+
+
 
 .country-details {
   display: flex;
