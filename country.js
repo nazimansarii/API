@@ -28,10 +28,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
 // native name
     if(country.name.nativeName){
         nativeName.innerText = Object.values(country.name.nativeName)[0].common;
-    } else{
-        nativeName.innerText = country.name.common
-    }
-
+    } 
     // subregin
     if(country.subregion)
     {
@@ -43,13 +40,14 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
 
     // currency 
     if(country.currencies){
-        Currencies.innerText = Object.values(country.currencies)[0].name
-        symbol.innerText = Object.values(country.currencies)[0].symbol
+
+        Currencies.innerText =Object.values(country.currencies).map((currency) => currency.name).join(', ')
+        symbol.innerText = Object.values(country.currencies).map((symol) => symol.symbol)
     }
 
     // language
     if(country.languages){
-        Languages.innerText = Object.values(country.languages)[0]
+        Languages.innerText = Object.values(country.languages)
     }
 
     // borders
@@ -57,13 +55,27 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
         // console.log(Object.values(country.borders));
 
         country.borders.forEach((border) => {
-            console.log(border);
-         
+           fetch(`https://restcountries.com/v3.1/alpha/${border}`)
+           .then((res) => res.json())
+           .then(([countryData])=> {
             const a = document.createElement('a')
-            a.innerText = border
-            a.href = '#';
-
+            a.innerText = countryData.name.common
+            a.href= `country.html?name=${countryData.name.common}`
             borderContry.append(a)
+           })
         })
     }
+})
+
+const linkTag = document.querySelector('.link-tag')
+linkTag.addEventListener('click', () => {
+    history.back()
+})
+
+const drk = document.querySelector('.drk')
+drk.addEventListener('click', () => {
+    
+
+
+
 })

@@ -1,11 +1,23 @@
 
 
+.light{
+    background-color: #fff;
+
+}
+
+.dark{
+    background-color: #111;
+}
+
 .link-tag {
   display: inline-block;
   margin: 20px 24px;
   box-shadow: 0 0 5px 0 #ccc;
   padding: 8px 24px;
   border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 .country-details {
