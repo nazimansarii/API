@@ -50,4 +50,19 @@ drk.addEventListener('click', () => {
 
   const body = document.querySelector('body')
   body.classList.toggle('dark')
+
+  if(body.classList == 'dark')
+  {
+    drk.querySelector('span').innerHTML ='Light Mode'
+    drk.querySelector('i').classList.remove('fa-moon')
+    drk.querySelector('i').classList.add('fa-sun')
+
+  } else{
+    drk.querySelector('span').innerHTML ='Dark Mode'
+    drk.querySelector('i').classList.add('fa-moon')
+
+    drk.querySelector('i').classList.remove('fa-sun')
+
+
+  }
 })
